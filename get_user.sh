@@ -5,8 +5,8 @@ then
 read -p "请输入APPKEY,(如：easemob-demo#easeim, and press ENTER): " APPKEY
 fi
 
-org_name=`echo $APPKEY | gawk 'BEGIN{FS="#"} {print $1}'`
-app_name=`echo $APPKEY | gawk 'BEGIN{FS="#"} {print $2}'`
+org_name=`echo ${APPKEY%#*}`
+app_name=`echo ${APPKEY#*#}`
 
 read -p "请输入域名(如：a1.easemob.com , and press ENTER): " HOST 
 
